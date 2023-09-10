@@ -1,4 +1,3 @@
-
 // const MongooseService = require( "./MongooseService" ); // Data Access Layer
 // const PostModel = require( "../models/post" ); // Database Model
 
@@ -18,7 +17,7 @@ class BalanceService {
    * create an expense
    * @returns {Promise<{success: boolean, error: *}|{success: boolean, body: *}>}
    */
-  async create ( transaction ) {
+  async create(transaction) {
     this.transactions.push(transaction);
     return transaction;
     // try {
@@ -30,9 +29,7 @@ class BalanceService {
   }
 
   async getBalance() {
-    return this.transactions.reduce((acc, transaction) => {
-      return acc + transaction.amount;
-    }, 0);
+    return this.transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
   }
 }
 
@@ -40,5 +37,5 @@ const BalanceServiceInstance = new BalanceService();
 
 module.exports = {
   BalanceService,
-  BalanceServiceInstance
+  BalanceServiceInstance,
 };
