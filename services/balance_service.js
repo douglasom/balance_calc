@@ -38,4 +38,7 @@ class BalanceService {
 
 const BalanceServiceInstance = new BalanceService();
 
-module.exports = BalanceServiceInstance;
+module.exports = {
+  BalanceService,
+  BalanceServiceInstance
+};

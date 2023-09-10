@@ -1,11 +1,10 @@
-const BalanceServiceInstance = require('../services/balance_service')
+const { BalanceServiceInstance } = require('../services/balance_service');
 
 const currencyFormatter = require('../services/currency_formatter');
 
 module.exports = (app, express) => {
   const forceTreatingBodyAsJson = express.json({type: '*/*'});
 
-  // Route that receives a POST request to /sms
   app.post('/spent', forceTreatingBodyAsJson, function (req, res) {
     const body = req.body;
     console.log('Received spent', body);

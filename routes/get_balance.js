@@ -1,4 +1,4 @@
-const BalanceServiceInstance = require('../services/balance_service')
+const { BalanceServiceInstance } = require('../services/balance_service');
 
 const currencyFormatter = require('../services/currency_formatter');
 
